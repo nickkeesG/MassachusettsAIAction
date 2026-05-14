@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Massachusetts AI Action Network</title>
+<style>
+  @font-face {
+    font-family: 'Niki';
+    src: url('Niki-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Niki', cursive, sans-serif;
+    background-color: #fff;
+    min-height: 100vh;
+    --line-height: 32px;
+    --top-offset: 24px;
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent calc(var(--line-height) - 1px),
+        #b5d1e8 calc(var(--line-height) - 1px),
+        #b5d1e8 var(--line-height)
+      );
+    background-position: 0 var(--top-offset);
+  }
+
+  /* Red margin line */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: min(10vw, 78px);
+    width: 2px;
+    background-color: #e87070;
+    z-index: 1;
+  }
+
+  /* Spiral binding holes */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: calc(min(10vw, 78px) / 2 - 10px);
+    width: 20px;
+    height: 100%;
+    background-image:
+      radial-gradient(circle 6px at 10px 30px, #d4cfc0 6px, transparent 6px);
+    background-size: 20px 64px;
+    background-repeat: repeat-y;
+    z-index: 1;
+  }
+
+  .page {
+    padding: var(--top-offset) 5vw 64px calc(min(10vw, 78px) + 24px);
+    padding-right: calc(min(10vw, 78px) + 24px);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: calc(var(--line-height) * 2);
+    color: #2a3d5c;
+    margin-bottom: var(--line-height);
+    white-space: nowrap;
+  }
+
+  /* Grid of org cards */
+  .orgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    padding: 16px 0;
+  }
+
+  /* Scrap of paper card */
+  .org-card {
+    width: 180px;
+    background: #fffef8;
+    padding: 18px 14px 14px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Torn / rough paper look */
+    box-shadow:
+      1px 2px 6px rgba(0,0,0,0.13),
+      0 0 0 1px rgba(0,0,0,0.04);
+    border: none;
+    /* Slight random rotations applied via inline style */
+  }
+
+
+  /* Tape strip across the top */
+  .org-card::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 16px;
+    background: rgba(200, 210, 180, 0.55);
+    border: 1px solid rgba(180, 190, 160, 0.3);
+    border-radius: 1px;
+  }
+
+  .org-logo {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .org-name {
+    font-family: 'Niki', cursive, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #2a3d5c;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <h1 class="title">Massachusetts AI Action Network</h1>
+
+    <div class="orgs">
+
+      <a class="org-card" href="https://www.pauseai-us.org" target="_blank" style="transform: rotate(-2.1deg);">
+        <img class="org-logo" src="https://www.pauseai-us.org/wp-content/uploads/2025/02/Logo_Light_250w.png" alt="PauseAI US logo">
+        <div class="org-name">PauseAI US</div>
+      </a>
+
+      <a class="org-card" href="https://www.humansfirst.com" target="_blank" style="transform: rotate(1.4deg);">
+        <img class="org-logo" src="https://images.squarespace-cdn.com/content/v1/6992262eb7d0d31b231ec3a1/323e2796-d13c-475a-a02d-0a03a2496583/Branding+Buildout+%281%29.png" alt="Humans First logo">
+        <div class="org-name">Humans First</div>
+      </a>
+
+      <a class="org-card" href="https://partnersindemocracy.us" target="_blank" style="transform: rotate(-0.8deg);">
+        <img class="org-logo" src="https://partnersindemocracy.us/wp-content/uploads/2022/09/Partners-Primary-Navy-1024x257.png" alt="Partners in Democracy logo">
+        <div class="org-name">Partners in Democracy</div>
+      </a>
+
+      <a class="org-card" href="https://alltechishuman.org/" target="_blank" style="transform: rotate(2.5deg);">
+        <img class="org-logo" src="https://images.squarespace-cdn.com/content/v1/60355084905d134a93c099a8/b2e49435-2af7-47fa-ab7b-6f662736a106/ATH_revised_logo.png" alt="All Tech is Human logo">
+        <div class="org-name">All Tech is Human</div>
+      </a>
+
+      <a class="org-card" href="https://www.mapletestimony.org" target="_blank" style="transform: rotate(-1.6deg);">
+        <img class="org-logo" src="https://www.mapletestimony.org/maple-logo.png" alt="MAPLE logo">
+        <div class="org-name">MA Platform for Legislative Engagement</div>
+      </a>
+
+      <a class="org-card" href="https://codeforboston.org/" target="_blank" style="transform: rotate(0.9deg);">
+        <img class="org-logo" src="https://codeforboston.org/img/cfb-logo/cfb-logo-stacked-dark.png" alt="Code for Boston logo">
+        <div class="org-name">Code for Boston</div>
+      </a>
+
+      <a class="org-card" href="https://cyber.harvard.edu" target="_blank" style="transform: rotate(-2.8deg);">
+        <img class="org-logo" src="https://cyber.harvard.edu/modules/custom/bkc_home/images/bkc_logo_social_share_default.jpg" alt="Berkman Klein Center logo">
+        <div class="org-name">Berkman Klein Center</div>
+      </a>
+
+      <a class="org-card" href="https://www.polluterspayma.org" target="_blank" style="transform: rotate(1.8deg);">
+        <img class="org-logo" src="https://assets.nationbuilder.com/betterfutureproject/sites/1025/meta_images/original/MPP_Color_Logo_for_use_with_WHITE_bkg.png?1676481402" alt="Make Polluters Pay logo">
+        <div class="org-name">Make Polluters Pay</div>
+      </a>
+
+      <a class="org-card" href="https://www.ajl.org" target="_blank" style="transform: rotate(-1.2deg);">
+        <img class="org-logo" src="https://cdn.prod.website-files.com/5e027ca188c99e3515b404b7/5e068138ad6bad4b83aa9a15_AJL%20Logo.webp" alt="Algorithmic Justice League logo">
+        <div class="org-name">Algorithmic Justice League</div>
+      </a>
+
+      <a class="org-card" href="https://d4bl.org" target="_blank" style="transform: rotate(2.2deg);">
+        <img class="org-logo" src="https://d3ddinu0wasgu9.cloudfront.net/packs/media/images/favicons/apple-touch-icon-596c5f9329d332f71e8a554b8ae9c6fc.png" alt="Data for Black Lives logo">
+        <div class="org-name">Data for Black Lives</div>
+      </a>
+
+      <a class="org-card" href="https://www.reclaimroxbury.org" target="_blank" style="transform: rotate(-0.5deg);">
+        <img class="org-logo" src="https://images.squarespace-cdn.com/content/v1/61f1b9622e6d036c86f463fd/4b80ed65-4b61-4797-80d0-b70bde142a69/ReclaimLogoFINAL.png" alt="Reclaim Roxbury logo">
+        <div class="org-name">Reclaim Roxbury</div>
+      </a>
+
+      <a class="org-card" href="https://www.ulem.org" target="_blank" style="transform: rotate(1.1deg);">
+        <img class="org-logo" src="https://static.wixstatic.com/media/f9be3a_1085253cee17406881b26748f2685a99~mv2.png" alt="ULEM logo">
+        <div class="org-name">Urban League of Eastern Massachusetts</div>
+      </a>
+
+      <a class="org-card" href="https://internetpolicy.mit.edu" target="_blank" style="transform: rotate(-2.4deg);">
+        <img class="org-logo" src="https://internetpolicy.mit.edu/wp-content/uploads/elementor/thumbs/IPRI_lockup_one-line_black_1000w-qnvmhft504r2gglpwe8n8symld6qmanzmsuucjycf4.png" alt="MIT IPRI logo">
+        <div class="org-name">MIT Internet Policy Research Initiative</div>
+      </a>
+
+      <a class="org-card" href="https://computing.mit.edu" target="_blank" style="transform: rotate(0.6deg);">
+        <img class="org-logo" src="https://computing.mit.edu/wp-content/uploads/2022/08/MIT_Schwarzman_College_of_Computing_logo.png" alt="MIT SERC logo">
+        <div class="org-name">MIT Schwarzman College of Computing</div>
+      </a>
+
+      <a class="org-card" href="https://aiethicsinitiative.org" target="_blank" style="transform: rotate(-1.9deg);">
+        <img class="org-logo" src="https://aiethicsinitiative.org/files/content/v1/5ace6485f8370a8efca4d468/1528388260227-857la3igozcxy9mo8tsz/aifund-logo.png" alt="AI Ethics Initiative logo">
+        <div class="org-name">Ethics &amp; Governance of AI Initiative</div>
+      </a>
+
+      <a class="org-card" href="https://www.cbai.ai" target="_blank" style="transform: rotate(2.7deg);">
+        <img class="org-logo" src="https://images.squarespace-cdn.com/content/v1/638570eef1e5353aff2a2a98/180513e9-938d-481b-a36a-332e5fd2c7eb/logo-main.png" alt="CBAI logo">
+        <div class="org-name">Cambridge Boston Alignment Initiative</div>
+      </a>
+
+      <a class="org-card" href="https://aialignment.mit.edu" target="_blank" style="transform: rotate(-0.3deg);">
+        <img class="org-logo" src="https://aialignment.mit.edu/images/maia_dark.svg" alt="MAIA logo">
+        <div class="org-name">MIT AI Alignment (MAIA)</div>
+      </a>
+
+      <a class="org-card" href="https://aisst.ai" target="_blank" style="transform: rotate(1.5deg);">
+        <img class="org-logo" src="https://images.squarespace-cdn.com/content/v1/6276a63ecf564172c125f58e/917fce39-b74a-4483-9b5e-a114516c8445/AISST.png?format=1500w" alt="AISST logo">
+        <div class="org-name">Harvard AI Safety Team</div>
+      </a>
+
+      <a class="org-card" href="https://www.meetup.com/ai-safety-awareness-group-boston/" target="_blank" style="transform: rotate(-2.6deg);">
+        <img class="org-logo" src="https://secure.meetupstatic.com/photos/event/2/5/d/highres_529500605.jpeg" alt="AI Safety Awareness Group logo">
+        <div class="org-name">AI Safety Awareness Group Boston</div>
+      </a>
+
+
+    </div>
+  </div>
+</body>
+</html>
