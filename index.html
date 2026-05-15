@@ -26,9 +26,11 @@
     font-family: 'Niki', cursive, sans-serif;
     background-color: #fff;
     min-height: 100vh;
+    position: relative;
     --line-height: 32px;
     --top-offset: 24px;
     background-image:
+      radial-gradient(circle 6px at calc(min(10vw, 78px) / 2) 30px, #d4cfc0 6px, transparent 6px),
       repeating-linear-gradient(
         to bottom,
         transparent,
@@ -36,7 +38,8 @@
         #b5d1e8 calc(var(--line-height) - 1px),
         #b5d1e8 var(--line-height)
       );
-    background-position: 0 var(--top-offset);
+    background-size: 100% 64px, 100% var(--line-height);
+    background-position: 0 0, 0 var(--top-offset);
   }
 
   /* Red margin line */
@@ -51,20 +54,6 @@
     z-index: 1;
   }
 
-  /* Spiral binding holes */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: calc(min(10vw, 78px) / 2 - 10px);
-    width: 20px;
-    height: 100%;
-    background-image:
-      radial-gradient(circle 6px at 10px 30px, #d4cfc0 6px, transparent 6px);
-    background-size: 20px 64px;
-    background-repeat: repeat-y;
-    z-index: 1;
-  }
 
   .page {
     padding: var(--top-offset) 5vw 64px calc(min(10vw, 78px) + 24px);
